@@ -167,7 +167,7 @@ def main(gpt_config, settings):
     # Download data if necessary
     ##############################
 
-    file_path = "the-verdict.txt"
+    file_path = "input.txt"
     url = "https://raw.githubusercontent.com/rasbt/LLMs-from-scratch/main/ch02/01_main-chapter-code/the-verdict.txt"
 
     if not os.path.exists(file_path):
@@ -244,7 +244,7 @@ def main(gpt_config, settings):
             "model_state_dict": model.state_dict(),
             "optimizer_state_dict": optimizer.state_dict(),
         }, 
-        "checkpoints/model_and_optimizer.pth"
+        "trained_checkpoints/model_and_optimizer.pth"
     )
     return train_losses, val_losses, tokens_seen, model
 
@@ -263,7 +263,7 @@ if __name__ == "__main__":
 
     OTHER_SETTINGS = {
         "learning_rate": 5e-4,
-        "num_epochs": 1,
+        "num_epochs": 10,
         "batch_size": 2,
         "weight_decay": 0.1
     }
